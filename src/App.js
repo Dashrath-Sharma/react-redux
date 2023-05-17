@@ -1,12 +1,17 @@
 import './App.css';
-import User from './User';
+import Home from './components/Home';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import {reducer} from './components/redux/reducers'
 
 function App() {
-
+  const store = createStore(reducer);
   return (
+    <Provider store={store}>
     <div className="App">
-      <User data={{name:'SS', age:'main Nahi Bataunga'}} />
+      <Home />
     </div>
+    </Provider>
   );
 }
 
